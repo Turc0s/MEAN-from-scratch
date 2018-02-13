@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ContactService } from '../contact.service';
 import { Contact } from "../contact";
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-contacts',
@@ -22,7 +23,7 @@ export class ContactsComponent implements OnInit {
    this.getAllContacts();
   }
 
-  onAddContact() {
+  onAddContact(contactForm: NgForm) {
     console.log("AddContact()");
     const newContact = {
       first_name: this.first_name,
@@ -33,6 +34,7 @@ export class ContactsComponent implements OnInit {
           .subscribe(contact => {
             this.contacts.push(contact);
             this.getAllContacts();
+            contactForm.reset();
           });
   }
 
@@ -57,26 +59,5 @@ export class ContactsComponent implements OnInit {
       this.contacts = contacts;
     });
   }
-
-  onRegUserSubmit() {
-
-    const newContact = {
-      first_name: this.first_name,
-      last_name: this.last_name,
-      phone: this.phone
-    }
-    this._contactService.addContact(newContact)
-          .subscribe(contact => {
-            this.contacts.push(contact);
-            this.getAllContacts();
-          });
-
-    // console.log("onREgUserForm()");
-    // this._contactService.addContact(regForm.value);
-    // regForm.reset();
-    // console.log("reset()");
-  }
-
-
 
 }

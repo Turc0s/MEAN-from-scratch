@@ -1,52 +1,13 @@
   
-  <!-- <h2 class="page-header">Add contact</h2>
-  <form (submit)="onAddContact()">
-    <form #regUserForm="ngForm" (ngSubmit)="onRegUserSubmit(regUserForm)">
-    <div class="form-group">
-      <label>First Name</label>
-      <input type="text" [(ngModel)]="first_name" name="first_name" class="form-control">
-    </div>
-
-    <div class="form-group">
-      <label>Last Name</label>
-      <input type="text" [(ngModel)]="last_name" name="last_name" class="form-control">
-    </div>
-
-    <div class="form-group">
-      <label>Phone No.</label>
-      <input type="text" [(ngModel)]="phone" name="phone" class="form-control" required>
-    </div>
-    <input type="submit" class="btn btn-success" value="Submit">
-    <button type="submit" class="btn btn-success">Submit</button>
-  </form>
- -->
-
- <!-- <form (submit)="onAddContact()"> -->
-    <!-- onRegUserSubmit(regUserForm) -->
-  <form #regUserForm="ngForm" (ngSubmit)="onAddContact()">
-    <!-- <div class="form-group">
-      <label>First Name</label>
-      <input type="text" [(ngModel)]="first_name" name="first_name" class="form-control">
-    </div>
-
-    <div class="form-group">
-      <label>Last Name</label>
-      <input type="text" [(ngModel)]="last_name" name="last_name" class="form-control">
-    </div>
-
-    <div class="form-group">
-      <label>Phone No.</label>
-      <input type="text" [(ngModel)]="phone" name="phone" class="form-control" required>
-    </div> -->
-
+  <h2 class="page-header">Add contact</h2>
+  <form #contactForm="ngForm" (ngSubmit)="onAddContact(contactForm)">
     <div class="form-group">
         <label>First Name</label>
         <input 
         class="form-control" 
         name="first_name" 
         #name="ngModel" 
-        [(ngModel)]="first_name" 
-        placeholder="First Name">
+        [(ngModel)]="first_name">
     </div>
 
     <div class="form-group">
@@ -55,8 +16,7 @@
         class="form-control" 
         name="last_name" 
         #name="ngModel" 
-        [(ngModel)]="last_name" 
-        placeholder="Last Name">
+        [(ngModel)]="last_name">
     </div>
 
     <div class="form-group">
@@ -65,11 +25,8 @@
         class="form-control" 
         name="phone" 
         #name="ngModel" 
-        [(ngModel)]="phone" 
-        placeholder="Phone No.">
+        [(ngModel)]="phone">
     </div>
-
-    <!-- <input type="submit" class="btn btn-success" value="Submit"> -->
     <button type="submit" class="btn btn-success">Submit</button>
   </form>
 
@@ -91,60 +48,3 @@
     </div>
   </div> 
 
-
-
-  <!-- <div class="row">
-      <div class="col-md-8">
-        <h3>Sign Up Page</h3>
-        <br>
-        <form #regUserForm="ngForm" (ngSubmit)="onRegUserSubmit(regUserForm)">
-    
-          <div class="form-group">
-            <label>First Name</label>
-            <input 
-            class="form-control" 
-            name="fname" 
-            #name="ngModel" 
-            [(ngModel)]="_regUserService.selectedRegUser.fname" 
-            placeholder="First Name">
-          </div>
-    
-          <div class="form-group">
-            <label>Last Name</label>
-            <input 
-            class="form-control" 
-            name="lname" 
-            #name="ngModel" 
-            [(ngModel)]="_regUserService.selectedRegUser.lname" 
-            placeholder="Last Name">
-          </div>
-    
-          <div class="form-group">
-            <label>Username</label>
-            <input 
-            class="form-control" 
-            name="username" 
-            #name="ngModel" 
-            [(ngModel)]="_regUserService.selectedRegUser.username" 
-            placeholder="Username">
-          </div>
-    
-          <div class="form-group">
-            <label>Email</label>
-            <input 
-            type="email" 
-            class="form-control"
-            name="email" 
-            #name="ngModel" 
-            [(ngModel)]="_regUserService.selectedRegUser.email" 
-            placeholder="Email">
-          </div>
-    
-          <button type="submit" class="btn btn-danger pull-right margin-left-custom">Sign Up</button>
-          <button type="button" class="btn btn-warning pull-right margin-left-custom" (click)="onResetRegForm()">Reset</button>
-          <button type="button" class="btn btn-default pull-right margin-left-custom" (click)="backToLogin()">Back</button>
-        </form>
-      </div>
-    </div>
-     -->
-    
