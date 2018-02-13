@@ -10,7 +10,7 @@ export class ContactService {
 
   // retrieving ContactService
   getContacts() {
-    return this._http.get("http://localhost:3000/api/contacts")
+    return this._http.get("http://localhost:3000/api/contacts/")
             .map(res => res.json());
   }
 
@@ -24,7 +24,7 @@ export class ContactService {
 
   // delete contact
   deleteContact(id) {
-    return this._http.delete("http://localhost:3000/api/contact"+id)
+    return this._http.delete("http://localhost:3000/api/contact/"+id)
                 .map(res => res.json());
 
   }
