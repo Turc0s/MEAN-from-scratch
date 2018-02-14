@@ -44,4 +44,9 @@ module.exports.updateContact = (id, contact, options, callback) => {
     Contact.findByIdAndUpdate(query, update, options, callback);
 }
 
+module.exports.removeContact = (id, callback) => {
+    var query = {_id: id};
+    Contact.remove(query, callback);
+}
+
 // const Contact = module.exports = mongoose.model("Contact", ContactSchema);
