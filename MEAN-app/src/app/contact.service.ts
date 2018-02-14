@@ -6,10 +6,6 @@ import "rxjs/Rx";
 @Injectable()
 export class ContactService {
 
-  contacts: Contact[];
-  contact: Contact;
-
-
   constructor(private _http: Http) { }
 
   // retrieving ContactService
@@ -34,10 +30,9 @@ export class ContactService {
   }
 
   // update contact info
-  // updateContact(contact: Contact, id: any) {
-  //   return this._http.put("http://localhost:3000/api/contact/" + id, contact)
-  //                 .map(res => res.json());
-  // }
-
+  updateContact(contact: Contact, id: any) {
+    return this._http.put("http://localhost:3000/api/contact/" + id, contact)
+                  .map(res => res.json());
+  }
 
 }
