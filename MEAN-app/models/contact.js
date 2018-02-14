@@ -16,4 +16,32 @@ const ContactSchema = mongoose.Schema({
     }
 });
 
-const Contact = module.exports = mongoose.model("Contact", ContactSchema);
+var Contact = module.exports = mongoose.model("Contact", ContactSchema);
+
+// Get contacts
+module.exports.getContacts = (callback, limit) => {
+    Contact.find(callback).limit(limit);
+}
+
+// get contact by id
+module.exports.getContactById = (id, callback) => {
+        Contact.findById(id, callback);
+}
+
+// post new contact
+module.exports.addContact = (contact, callback) => {
+    Contact.create(contact, callback);
+}
+
+// Update contact
+module.exports.updateContact = (id, contact, options, callback) => {
+    var query = {_id: id};
+    var update = {
+        first_name: contact.first_name,
+        last_name: contact.last_name,
+        phone: contact.phone
+    }
+    Contact.findByIdAndUpdate(query, update, options, callback);
+}
+
+// const Contact = module.exports = mongoose.model("Contact", ContactSchema);

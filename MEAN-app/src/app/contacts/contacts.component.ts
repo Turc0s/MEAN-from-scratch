@@ -60,4 +60,12 @@ export class ContactsComponent implements OnInit {
     });
   }
 
+  // onEditContact(id: any) {
+  //   var contact = this.contact;
+  //   this._contactService.updateContact(id, contact)
+  //           .subscribe(data => {
+  //             console.log("Update contact: " + contact);
+  //           });
+  // }
+
 }
